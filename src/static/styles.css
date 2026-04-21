@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #222;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -19,8 +19,8 @@ header {
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
-  background-color: #1a237e;
-  color: white;
+  background-color: #0d133d;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -41,13 +41,36 @@ main {
   }
 }
 
-section {
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
+}
+
+/* Visually hidden for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+input:focus, select:focus, button:focus {
+  outline: 3px solid #3949ab;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #c5cae9;
+}
+
+/* Improve contrast for headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #0d133d;
+}
 }
 
 section h3 {
@@ -67,7 +90,7 @@ section h3 {
 
 .activity-card h4 {
   margin-bottom: 10px;
-  color: #0066cc;
+  color: #00509e;
 }
 
 .activity-card p {
@@ -144,14 +167,16 @@ section h3 {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #888;
   border-radius: 4px;
   font-size: 16px;
+  background-color: #fafafa;
+  color: #222;
 }
 
 button {
-  background-color: #1a237e;
-  color: white;
+  background-color: #0d133d;
+  color: #fff;
   border: none;
   padding: 10px 15px;
   font-size: 16px;
@@ -160,7 +185,7 @@ button {
   transition: background-color 0.2s;
 }
 
-button:hover {
+button:hover, button:focus {
   background-color: #3949ab;
 }
 

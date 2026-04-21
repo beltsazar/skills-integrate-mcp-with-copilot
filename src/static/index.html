@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" role="main">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,41 +7,42 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+    <header role="banner">
+      <h1 tabindex="0">Mergington High School</h1>
+      <h2 tabindex="0">Extracurricular Activities</h2>
     </header>
 
-    <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
+    <main id="main-content" tabindex="-1">
+      <section id="activities-container" aria-labelledby="activities-heading">
+        <h3 id="activities-heading" tabindex="0">Available Activities</h3>
+        <div id="activities-list" role="list">
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+      <section id="signup-container" aria-labelledby="signup-heading">
+        <h3 id="signup-heading" tabindex="0">Sign Up for an Activity</h3>
+        <form id="signup-form" aria-describedby="form-desc" autocomplete="off">
+          <span id="form-desc" class="sr-only">All fields are required. Use Tab to navigate.</span>
           <div class="form-group">
             <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <input type="email" id="email" required placeholder="your-email@mergington.edu" aria-required="true" aria-label="Student Email" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
-            <select id="activity" required>
+            <select id="activity" required aria-required="true" aria-label="Select Activity">
               <option value="">-- Select an activity --</option>
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" aria-label="Sign Up">Sign Up</button>
         </form>
-        <div id="message" class="hidden"></div>
+        <div id="message" class="hidden" role="alert" tabindex="0"></div>
       </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
       <p>&copy; 2026 Mergington High School</p>
     </footer>
 
